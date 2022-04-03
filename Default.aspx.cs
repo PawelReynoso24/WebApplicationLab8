@@ -15,7 +15,7 @@ namespace WebApplicationLab8
 
         private void LeerAlumnos()
         {
-            string fileName = Server.MapPath("~/Alumnos");
+            string fileName = Server.MapPath("~/Archivos/Alumnos");
 
 
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
@@ -36,14 +36,19 @@ namespace WebApplicationLab8
         }
         private void GuardarInscripciones()
         {
-            string fileName = Server.MapPath("~/");
+            string fileName = Server.MapPath("~/Archivos/Inscripciones");
 
             FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
             
             StreamWriter writer = new StreamWriter(stream);
-            
-            writer.WriteLine(texto);
-            
+
+            foreach (var inscripcion in inscripciones)
+            {
+                writer.WriteLine(inscripcion.carne);
+                writer.WriteLine(inscripcion.grado);
+                writer.WriteLine(inscripcion.fecha);
+            }
+
             writer.Close();
         }
         protected void Page_Load(object sender, EventArgs e)
