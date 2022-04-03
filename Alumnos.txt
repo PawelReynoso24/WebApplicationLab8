@@ -1,0 +1,6 @@
+C1
+Alumno 1
+C2
+Alumno 2
+C3
+Alumno 3
