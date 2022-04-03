@@ -15,7 +15,7 @@ namespace WebApplicationLab8
 
         private void LeerAlumnos()
         {
-            string fileName = Server.MapPath("~/Archivos/Alumnos");
+            string fileName = Server.MapPath("~/Archivos/Estudiantes.txt");
 
 
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
@@ -36,7 +36,7 @@ namespace WebApplicationLab8
         }
         private void GuardarInscripciones()
         {
-            string fileName = Server.MapPath("~/Archivos/Inscripciones");
+            string fileName = Server.MapPath("~/Archivos/Inscripciones.txt");
 
             FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
             
@@ -64,10 +64,12 @@ namespace WebApplicationLab8
         {
             Inscripciones inscripcion = new Inscripciones();
             inscripcion.carne = DropDownList1.SelectedValue;
-            inscripcion.grado = Convert.ToInt16(TextBox1);
+            inscripcion.grado = Convert.ToInt16(TextBox1.Text);
             inscripcion.fecha = DateTime.Now;
 
             inscripciones.Add(inscripcion);
+
+            GuardarInscripciones();
         }
     }
 }
