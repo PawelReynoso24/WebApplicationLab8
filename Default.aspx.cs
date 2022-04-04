@@ -73,7 +73,7 @@ namespace WebApplicationLab8
         {
             Inscripciones inscripcion = new Inscripciones();
             inscripcion.carne = DropDownList1.SelectedValue;
-            inscripcion.grado = Convert.ToInt16(TextBox1.Text);
+            inscripcion.grado = Convert.ToInt16(TextBoxGrado.Text);
             inscripcion.fecha = DateTime.Now;
 
             inscripciones.Add(inscripcion);
