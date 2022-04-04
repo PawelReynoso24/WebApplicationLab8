@@ -11,7 +11,7 @@ namespace WebApplicationLab8
     public partial class _Default : Page
     {
         List<Alumno> alumnos = new List<Alumno>();
-        static List<Inscripciones> inscripciones = new List<Inscripciones>();
+       static List<Inscripciones> inscripciones = new List<Inscripciones>();
 
         private void LeerAlumnos()
         {
@@ -38,7 +38,7 @@ namespace WebApplicationLab8
         {
             string fileName = Server.MapPath("~/Archivos/Inscripciones.txt");
 
-            FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write);
             
             StreamWriter writer = new StreamWriter(stream);
 
@@ -55,6 +55,7 @@ namespace WebApplicationLab8
         {
             LeerAlumnos();
 
+            DropDownList1.DataTextField = "nombre";
             DropDownList1.DataValueField = "carne";
             DropDownList1.DataSource = alumnos;
             DropDownList1.DataBind();
