@@ -68,8 +68,7 @@ namespace WebApplicationLab8
                 DropDownList1.DataBind();
             }
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Inscripciones inscripcion = new Inscripciones();
             inscripcion.carne = DropDownList1.SelectedValue;

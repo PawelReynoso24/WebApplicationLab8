@@ -20,7 +20,8 @@
         <asp:RangeValidator ID="RangeValidatorGrado" runat="server" ControlToValidate="TextBoxGrado" ErrorMessage="RangeValidator" MaximumValue="6" MinimumValue="1" SetFocusOnError="True" Type="Integer">Sólo se permiten números del 1 al 6</asp:RangeValidator>
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        <br />
+        <asp:Button ID="ButtonGuardar" runat="server" OnClick="ButtonGuardar_Click" Text="GUARDAR" Width="88px" />
         
     </div>
 
