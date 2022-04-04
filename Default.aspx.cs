@@ -53,6 +53,11 @@ namespace WebApplicationLab8
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            //PostBack: cuando se carga la primera vez no es postback
+            //todas las demás veces que se vuelve a cargar si es postback
+
+            //El if controla que cargue los datos, solo la primera vez que
+            //no es postback, las demás se las salta.
             if (!IsPostBack)
             {
                 LeerAlumnos();
