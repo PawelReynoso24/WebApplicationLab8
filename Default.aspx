@@ -13,6 +13,7 @@
         <asp:DropDownList ID="DropDownList1" runat="server">
         </asp:DropDownList>
         <br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorAlumno" runat="server" ControlToValidate="DropDownList1" ErrorMessage="Debe seleccionar al Alumno"></asp:RequiredFieldValidator>
         <br />
         <br />
         <asp:TextBox ID="TextBoxGrado" runat="server"></asp:TextBox>
