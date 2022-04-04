@@ -53,12 +53,15 @@ namespace WebApplicationLab8
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            LeerAlumnos();
+            if (!IsPostBack)
+            {
+                LeerAlumnos();
 
-            DropDownList1.DataTextField = "nombre";
-            DropDownList1.DataValueField = "carne";
-            DropDownList1.DataSource = alumnos;
-            DropDownList1.DataBind();
+                DropDownList1.DataTextField = "nombre";
+                DropDownList1.DataValueField = "carne";
+                DropDownList1.DataSource = alumnos;
+                DropDownList1.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
